@@ -1,0 +1,54 @@
+
+<div class="col-sm-12">
+    <div class=" page-heading" id="page-heading">
+        <h3 class="">my - Groups</h3>
+    </div>
+    
+    <panel panel-class="panel-sky" ng-hide=""> 
+        <div class="panel panel-sky add-panel">
+            
+            <div class="form-horizontal panel-heading list-header">
+                <div class="">
+                    <span>
+                        <span class="btn btn-prod"   ng-click="addGroup()"> 
+                            <strong>Create New Group </strong> 
+                        </span> 
+                    </span>
+                </div>
+            </div>
+            
+            <div class="panel-heading ">
+                
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive ng-scope">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th> Thumbnail </th>
+                                <th> Group - Name </th>
+                                <th>  created_at </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in myGps.mygroups">
+                                
+                                <td> <img class="profile-img" height="50" width="60" ng-src="{{myGps.ImagePath}}/group/{{x.image}}" /> </td>
+                                <td><a style="cursor:pointer" ng-click="groupDetails( x.group_id )">{{ x.group_name}}</a></td>
+                                <td>{{ x.created_at }}</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </panel>
+    
+</div>
+<!-- test for jQuery, id is selected in mygroupsController.js 
+<div id="test">
+    
+</div>
+--> 

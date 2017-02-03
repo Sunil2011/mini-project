@@ -1,0 +1,76 @@
+<div class="container-fluid">    
+    <div data-widget-group="group1" class="ui-sortable">
+        <div class=" page-heading" id="page-heading">
+            <h3> Register New User </h3>
+        </div>
+        <div class="panel panel-default add-panel">
+            <div class="panel-body">
+                
+                
+                <form ng-submit="" enctype="multipart/form-data" name="uform" id="productForm" class="form-horizontal row-border ng-pristine ng-valid">
+                    <input class="form-control"  type="hidden" ng-model="Auth.user_id">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">User Name </label>
+                        <div class="col-md-8">
+                            <input class="form-control" name="user_name" type="text" ng-model="Auth.user_name" required  >
+                            <span style="color:red" ng-show="uform.user_name.$invalid">
+                                <span ng-show="uform.user_name.$error.required">* user - name  required.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Email  </label>
+                        <div class="col-md-8">
+                            <input class="form-control" name="user_email" type="text" ng-model="Auth.user_email" required >
+                            <span style="color:red" ng-show="uform.user_email.$invalid">
+                                <span ng-show="uform.user_email.$error.required">* user - email  required.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Password </label>
+                        <div class="col-md-8">
+                            <input class="form-control" name="user_password" type="password" ng-model="Auth.user_password" required >
+                            <span style="color:red" ng-show="uform.user_password.$invalid">
+                                <span ng-show="uform.user_password.$error.required">* user - password  required.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Date of Birth </label>
+                        <div class="col-md-8">
+                            <p class="input-group"><input class="form-control" name="user_dob" type="text" ng-model="Auth.user_dob" placeholder="yyyy-mm-dd" uib-datepicker-popup="" is-open="popupOpened" close-text="Close" required >                             
+                                <span class="input-group-btn">
+                                   <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+                            
+                            <span style="color:red" ng-show="uform.user_dob.$invalid">
+                                <span ng-show="uform.user_dob.$error.required">* date of birth  required.</span>
+                            </span>
+                        </div>
+                        
+                    </div>
+                   
+
+                </form>
+                
+            </div>
+           <!-- {{uform.$valid}}  -->
+           
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="submit-btn-div col-sm-2">
+                            <span class="btn btn-prod " ng-click="Auth.register(uform.$valid)">Submit</span>
+                        </div>
+                        <div class="cancel-btn-div col-sm-2">
+                            <span class="btn btn-prod " id="cancelForm" ng-click="Auth.cancel()">Cancel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="col-sm-12">
+    <div class=" page-heading" id="page-heading">
+        <img align="middle" height="200px" width="60%" ng-src="{{gpM.ImagePath}}/group/{{gpM.group_image}}" />
+        <h3 class="" style=" text-decoration: underline"> {{ gpM.group_name }}</h3>
+    </div>
+    
+    <panel panel-class="panel-sky" ng-hide=""> 
+        <div class="panel panel-sky add-panel">
+            
+           
+            
+            <div class="panel-heading ">
+                
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive ng-scope">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th> Thumbnail </th>
+                                <th> User Name </th>
+                                <th>  Email </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in gpM.group_members">
+                                
+                                <td> <img class="profile-img" height="50" width="60" ng-src="{{gpM.ImagePath}}/person.png" /> </td>
+                                <td>{{ x.user_name}}</td>
+                                <td>{{ x.email }}</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </panel>
+    
+</div>

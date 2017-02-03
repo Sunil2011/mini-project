@@ -1,0 +1,49 @@
+<div class="container-fluid" style="border: 5px solid  #06368f">    
+    <div data-widget-group="group1" class="ui-sortable">
+        <div class=" page-heading" id="page-heading">
+            <h3> CREATE NEW GROUP </h3>
+        </div>
+        <div class="panel panel-default add-panel">
+            <div class="panel-body">
+                <form ng-submit="" name="gform" enctype="multipart/form-data" id="categoryForm" class="form-horizontal row-border ng-pristine ng-valid">
+                    
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Group Name </label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" name="group_name" ng-model="addGp.group_name" required >
+                            <span style="color:red" ng-show="gform.group_name.$invalid">
+                                <span ng-show="gform.group_name.$error.required">* group-name required.</span>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Group Image </label>
+                        <span class="col-md-2" ng-show="addGp.group_image">
+                            <img class="profile-img" height="50" width="60" ng-src="{{addGp.ImagePath}}/group/{{addGp.group_image}}" err-src=""/>
+                        </span>
+                        <label class="custom-file-upload col-md-2">
+                            <input class="" type="file" file-model="file"/>
+                            <i class=""></i>
+                        </label>
+                  
+                    </div>
+
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="submit-btn-div col-sm-2">
+                            <span class="btn btn-prod " ng-click="addGp.submitGroup(gform.$valid )">Submit</span>
+                        </div>
+                        <div class="cancel-btn-div col-sm-2">
+                            <span class="btn btn-prod " id="cancelForm" ng-click="addGp.cancel()">Cancel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

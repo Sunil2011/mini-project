@@ -1,0 +1,22 @@
+{
+    "name": "zendframework/skeleton-application",
+    "description": "Skeleton Application for ZF2",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "zf2"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "require": {
+        "php": ">=5.5",
+        "zendframework/zendframework": "~2.5",
+        "doctrine/common": "^2.5",
+        "twbs/bootstrap":"3.3.5",
+        "components/jquery":"1.9.*",
+        "outeredge/swagger-module": "dev-master",
+        "kbrabrand/zf2-swagger-ui": "dev-master",
+        "zendframework/zend-crypt" : "2.*" ,
+        "zf-commons/zfc-user": "^1.4"
+       
+    }
+}

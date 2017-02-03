@@ -1,0 +1,63 @@
+
+<div class="col-sm-12">
+    <div class=" page-heading" id="page-heading">
+        <h3 class="">my - Groups</h3>
+    </div>
+    
+    <panel panel-class="panel-sky" ng-hide=""> 
+        <div class="panel panel-sky add-panel">
+            
+            <div class="form-horizontal panel-heading list-header">
+                <div class="">
+                    <span>
+                        <span class="btn btn-prod"   ng-click="addGroup()"> 
+                            <strong>Create New Group </strong> 
+                        </span>  &nbsp;&nbsp;
+                        
+                    </span>
+                    
+                    <span>
+                        <span class="btn btn-prod"   ng-click="showGroupMembers(Grp.group_id)"> 
+                            <strong> View Group Members  </strong> 
+                        </span>  &nbsp;&nbsp;
+                        
+                    </span>
+                    
+                </div>
+            </div>
+            <!-- group chats-->
+            <div style="border-style: solid ; border-color: coral ; height: 450px">
+                <div  style="height: 300px; overflow: auto" id="commentBox"  schroll-bottom="Grp.group_chats">
+                    <div  ng-repeat="x in Grp.group_chats " >
+                        <div style="background-color: #daf4f4 ; padding: 5px">
+                            <p> <b> &nbsp; {{x.user_name}} : </b> &nbsp; {{x.created_at}} </p>
+                            &nbsp; {{x.comment }} 
+                            
+                            <h3 style="padding: 10px; cursor: pointer" class="ti-thumb-up" ng-click="likePost(x.chat_id)">  </h3>
+                            <span ng-show="{{x.isLikedByMe}}"> you liked this </span>
+                            <a  ng-click="likeDetails(x.chat_id)"> <span style="padding: 10px" ng-show="{{x.likes}}" >  {{x.likes}} people liked this </span> </a>
+                        </div>
+                        <p>  </p>
+                        <p> </p>
+                   </div>
+                                        
+                </div>
+                <div style="margin: 5px" >
+                    <textarea rows="4" cols="75%"  ng-model="Grp.postcomnt" form="textForm">
+                     </textarea>
+                                        
+                    <form form ng-submit="postComment()"  enctype="multipart/form-data" id="textForm" class="form-horizontal row-border ng-pristine ng-valid ">
+                        <input type="hidden" ng-model="Grp.group_id">                        
+                        &emsp;   <input  class="btn btn-prod" type="submit"/>                       
+                    </form>
+                    
+                </div>
+            </div>
+           
+            
+        </div>
+    </panel>
+    
+</div>
+
+

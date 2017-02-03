@@ -1,0 +1,77 @@
+<!-- File: index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- JS dependencies -->
+    <!-- AngularJS library -->
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <!-- loaded inside app  
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script> 
+    -->
+    <!-- AngularJS UI-Router -->
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+   
+    <!-- CSS dependencies -->
+    
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bower_components/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../bower_components/pnotify/dist/pnotify.css?bust=v0.4.2">
+    <link rel="stylesheet" href="../bower_components/pnotify/dist/pnotify.buttons.css?bust=v0.4.2">    
+    <!-- some modification is done  -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="../css/custom_style.css">
+
+    <title>  mini-project </title>
+</head>
+
+<!-- AngularJS Application   -->
+<!--  BaseController ( defined in app.js ) is included to  all modules  -->
+<body ng-controller="BaseController as base">
+   
+    <div id='header' ng-show="layoutLoading" > 
+        <ng-include src="headerView" class="navbar-fixed-top"> </ng-include>
+    </div>
+    
+    <div id="wrapper" >
+        
+        <div id="sidebar-wrapper"  ng-show="layoutLoading" >
+            <ng-include src="sidebarView" > </ng-include>
+        </div>
+        
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <!-- ui-view attribute is the indicator where to inject the views managed by AngularJS UI-Router -->
+                 <div ui-view> </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+<script src="../bower_components/requirejs/require.js"></script>
+  <script>
+      var baseUrl =  window.location.origin + '/mini-project/public';
+      console.log(baseUrl);
+      
+      // obtain requirejs config
+      require(['require', './js/config-require'], function (require, config) {
+
+        // set cache beater
+        config.urlArgs = 'bust=v0.4.43';
+
+        // update global require config
+        window.require.config(config);
+
+        // load app
+        require(['./js/main.js']);
+      });
+  </script>
+
+
+</body>
+</html>
+
+
